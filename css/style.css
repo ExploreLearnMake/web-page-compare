@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+  --primary-text-color: hsl(0, 0%, 20%);
+  --secondary-text-color: hsl(0, 0%, 65%);
+  --primary-bg-color: hsl(0, 0%, 98%);
+  --secondary-bg-color: hsl(0, 0%, 93%);
+  --tertiary-bg-color: hsl(0, 0%, 80%);
+  --primary-accent-color: hsl(211, 100%, 50%);
+  --secondary-accent-color: hsl(211, 100%, 27%);
+  --tertiary-accent-color: hsl(212, 100%, 71%);
+  --primary-border-color: hsl(0, 0%, 50%);
+  --primary-shadow-color: hsl(0, 0%, 70%);
+}
+/* CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Atkinson Hyperlegible", Roboto, sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    height: 100vh;
+}
+
+/* form stylings */
+form {
+    width: 100%;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 5px;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 0 5px var(--primary-shadow-color);
+    display: grid;
+    gap: 10px;
+}
+.form-div {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 100px auto;
+    grid-template-rows: repeat(3, auto);
+    align-items: center;
+    padding: 1em;
+}
+.form-div:first-child {
+    /* background-color: var(--secondary-bg-color); */
+    border-bottom: 1px solid var(--primary-border-color);
+}
+.form-div:last-child {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  margin: 0 auto;
+}
+.form-div h2 {
+  grid-row: 1 / -1;
+}
+.form-div button {
+    padding: 10px;
+    width: 20ch;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-accent-color);
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+form button:hover {
+    background-color: var(--secondary-accent-color);
+}
+/* main section stylings */
+main {
+    padding: 1em;
+}
+main p:first-of-type {
+    margin-bottom: 1em;
+}
+ul {
+    list-style-type: none;
+    display: grid;
+    gap: 10px;
+    margin-left: 1.5em;
+}
+.removed-item {
+  background-color: hsl(0, 100%, 93%);
+  color: hsl(0, 100%, 22%);
+  text-decoration: line-through;
+  max-width: max-content;
+}
+.added-item {
+  background-color: hsl(116, 100%, 87%);
+  outline: 2px solid hsl(116, 100%, 29%);
+  max-width: max-content;
+}
+.modified-item {
+  background-color: hsl(63, 100%, 87%);
+  border-bottom: 2px hsl(63, 100%, 26%) dashed;
+  max-width: max-content;
+}
+/* tab stylings */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+}
+/* Hide the radio inputs */
+.tabs input[type="radio"] {
+  display: none;
+}
+/* Style the labels (tabs) */
+.tabs label {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: .2rem;
+  padding: 1rem;
+  font-weight: 600;
+  order: initial;
+  background-color: var(--secondary-bg-color);
+  box-shadow: 0 -1px 2px var(--primary-shadow-color);
+  transition: background ease 0.3s;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 1em 1em 0 0;
+}
+/* Style the content sections */
+.tab-content {
+  display: none;
+  flex-grow: 1;
+  padding: 1rem;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid var(--primary-border-color);
+}
+/* Highlight the selected tab */
+.tabs input[type="radio"]:checked + label {
+  background-color: white;
+  border: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid white;
+}
+/* Display content when a tab is selected */
+.tabs input[type="radio"]:checked + label + .tab-content {
+  display: block;
+}
+
+@media (min-width: 10em) {
+  .tabs .tab-content {
+    order: 99
+  }
+  .tabs label {
+    order: 1;
+  }
+  .tabs label {
+    margin-right: 0.3rem;
+    margin-top: 0;
+    width: auto;
+  }
+}

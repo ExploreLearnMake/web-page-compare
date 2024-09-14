@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare web pages</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section>
+    <form>
+      <div class="form-div">
+        <h2>Tab 1</h2>
+        <label for="url1">URL 1</label>
+        <input type="url" name="url1" id="url1" required>
+        <p>Enter the URL of the newest web page you want to compare.</p>
+      </div>
+      <div class="form-div">
+        <h2>Tab 2</h2>
+        <label for="url2">URL 2</label>
+        <input type="url" name="url2" id="url2" required>
+        <p>Enter the URL of the oldest web page you want to compare.</p>
+      </div>
+      <div class="form-div">
+        <button type="button" id="compareButton">Compare</button>
+      </div>
+    </form>
+  </section>
+  <main>
+    <h1>Compare web pages</h1>
+    <p>Enter the URLs of two web pages that you wish to compare. After clicking on the Compare button, the differences will appear below. Items will be shown as in the examples below:</p>
+    <ul>
+      <li>Items that were REMOVED from the oldest page will be shown in <span class="removed-item">red with a strikethrough</span>.</li>
+      <li>Items that were ADDED to the new page will be shown with <span class="added-item">a light green background and outline</span>.</li>
+      <li>Items that were MODIFIED from the oldest to the newest page will be shown in <span class="modified-item">yellow with a dashed underline</span>.</li>
+    </ul>
+  </main>
+  <section id="results">
+    <!--
+    Results will be displayed here with two tabs.
+    The first tab will show the oldest page and the second tab will show the newest page.
+    -->
+    <div class="tabs">
+      <!-- Tab 1 -->
+      <input type="radio" name="tab" id="tab1" checked>
+      <label for="tab1">Tab 1</label>
+      <div class="tab-content" id="content1">
+        Content for Tab 1
+      </div>
+      <!-- Tab 2 -->
+      <input type="radio" name="tab" id="tab2">
+      <label for="tab2">Tab 2</label>
+      <div class="tab-content" id="content2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </section>
+  <script src="js/script.js"></script>
+</body>
+</html>
